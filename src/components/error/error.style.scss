@@ -1,0 +1,26 @@
+.error-main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to left, #050019, #09012d);
+
+    .error-container {
+        width: 80%;
+        margin: 0 auto;
+        gap: 40px;
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h1{
+            font-size: 75px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}

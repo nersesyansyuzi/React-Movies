@@ -1,0 +1,271 @@
+main {
+
+    .header {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background: linear-gradient(to left, #050019, #09012d);
+
+        @media only screen and (max-width:700px) {
+            height: 600px;
+        }
+
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-direction: column;
+
+            h1 {
+                color: white;
+                font-weight: 800;
+                font-size: 30px;
+                letter-spacing: 1px;
+                user-select: none;
+                font-family: "Montserrat", sans-serif;
+            }
+
+            h5 {
+                color: white;
+                font-size: 20px;
+                max-width: 700px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            button {
+                padding: 8px 15px;
+                font-size: 19px;
+                color: white;
+                background-color: #050019;
+                border-radius: 7px;
+                border-bottom-left-radius: 0;
+                cursor: pointer;
+                position: relative;
+                transition: color 0.5s ease, background-color 0.5s ease;
+
+                &:hover {
+                    color: #050019;
+                    background-color: white;
+
+                }
+            }
+
+            &.active {
+                left: 260px;
+                transition: left 0.5s ease;
+                width: calc(100% - 260px);
+            }
+        }
+    }
+
+    section {
+        background: linear-gradient(to left, #050019, #09012d);
+
+        .container {
+            width: 87%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            scroll-behavior: smooth;
+            font-family: 'Times New Roman', Times, serif;
+
+            @media only screen and (max-width:1200px) {
+                width: 80%;
+
+            }
+
+            @media only screen and (max-width:900px) {
+                width: 87%;
+
+            }
+
+            h3 {
+                color: white;
+                font-size: 28px;
+                user-select: none;
+                padding: 25px 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .slider {
+                margin-top: 20px;
+                overflow: hidden;
+                scroll-behavior: smooth;
+
+                .popular {
+                    gap: 10px;
+                    display: grid;
+                    font-size: 17px;
+                    color: white;
+                    user-select: none;
+                    grid-auto-flow: column;
+                    grid-auto-columns: 255px;
+                    scroll-behavior: smooth;
+                    grid-template-columns: repeat(auto-fit, minmax(255px, auto));
+
+                    @media only screen and (max-width:900px) {
+                        grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+                        grid-auto-columns: 200px;
+                        gap: 10px;
+
+                    }
+
+                    .slider-reg {
+                        position: absolute;
+                        top: 40px;
+                        right: 20px;
+
+                        svg {
+                            font-size: 35px;
+                            cursor: pointer;
+                            color: #4f2dd7;
+                            transition: color 0.5s ease;
+
+                            &:hover {
+                                color: white;
+                            }
+
+                            &:nth-child(1) {
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+
+                    .popular-movie {
+                        cursor: pointer;
+                        transition: top 0.5s ease-in-out;
+                        position: relative;
+
+
+                        .movie {
+                            overflow: hidden;
+                            position: relative;
+
+                            &:hover {
+                                .overview {
+                                    transform: translateY(0);
+                                }
+                            }
+
+                            h4 {
+                                font-size: 20px;
+
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            .overview {
+                                transition: transform 0.7s ease;
+                                position: absolute;
+                                width: 100%;
+                                overflow: hidden;
+                                max-height: 385px;
+                                left: 0;
+                                top: 0;
+                                color: black;
+                                padding: 8px;
+                                transform: translateY(-100%);
+                                background-color: white;
+
+                                h4 {
+                                    padding-bottom: 8px;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .line {
+                    height: 2px;
+                    width: 100%;
+                    background-color: white;
+                    position: absolute;
+                    margin: 20px 0;
+
+                    div {
+                        top: 0;
+                        left: 0;
+                        width: 20%;
+                        height: 100%;
+                        position: absolute;
+                        background-color: red;
+                    }
+                }
+
+            }
+
+            .slider-tv {
+                height: 706px;
+                margin: 20px 0 40px 0;
+                overflow: hidden;
+
+                .tv-popular {
+                    gap: 10px;
+                    display: grid;
+                    font-size: 17px;
+                    color: white;
+                    user-select: none;
+                    grid-auto-flow: column;
+                    grid-auto-columns: 400px;
+                    scroll-behavior: smooth;
+                    overflow-x: scroll;
+                    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+
+                    .popular-Tvmovie {
+                        cursor: pointer;
+
+                        .tv {
+                            position: relative;
+
+                            &:hover {
+                                .overview {
+                                    transform: translateY(0);
+                                }
+                            }
+
+                            .overview {
+                                transition: transform 0.7s ease;
+                                position: absolute;
+                                width: 100%;
+                                overflow: hidden;
+                                max-height: 385px;
+                                left: 0;
+                                top: 0;
+                                color: black;
+                                padding: 8px;
+                                transform: translateY(-100%);
+                                background-color: white;
+
+                                h4 {
+                                    padding-bottom: 8px;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+
+                        img {
+                            height: 100%;
+                            width: 100%;
+                            min-height: 600px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+import Home from './components/Home/Home';
+import Tv from './components/Tv/Tv';
+import Search from './components/Search/Search';
+import Details from './components/details/Details';
+import Login from './components/login/Login';
+import SignUp from './components/signUp/SignUp';
+import Forgot from './components/forgot/Forgot';
+import Profile from './components/profile/Profile';
+import ProtectedRout from './components/profile/ProtectedRout';
+import ErrorPage from './components/error/ErrorPage';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MainLayout />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/tv' element={<Tv />} />
+        <Route path='/search' element={<Search />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/forgot' element={<Forgot />} />
+        <Route path='/profile' element={<ProtectedRout>
+          <Profile />
+        </ProtectedRout>} />
+        <Route path='/details/:option/:id' element={<Details />} />
+        <Route path='*' element={<ErrorPage />} />
+      </Routes>
     </div>
   );
 }

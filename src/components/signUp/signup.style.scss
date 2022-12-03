@@ -1,0 +1,79 @@
+.main-singup {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to left, #050019, #09012d);
+
+    .singup-form {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 40px;
+        padding: 40px;
+        text-align: center;
+        border-radius: 4px;
+        background-color: white;
+        .singup-user-error{
+            gap: 25px;
+            height: 40px;
+            display: flex;
+            color: #f56c6c;
+            align-items: center;
+            justify-content: center;
+            background-color: #fef0f0;
+            svg{
+                font-size: 18px;
+            }
+        }
+
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+
+        .input-wrapper {
+            position: relative;
+
+            span {
+                position: absolute;
+                bottom: 0;
+                right: 5px;
+                color: red;
+            }
+
+            input {
+                border-radius: 4px;
+                border: 0;
+                background-color: rgb(237, 241, 245, .7);
+                color: rgb(92, 114, 138);
+                font-size: 15px;
+                font-weight: 600;
+                height: 40px;
+                line-height: 40px;
+                margin-bottom: 25px;
+                padding: 0 15px;
+                width: 100%;
+                outline: none;
+            }
+        }
+
+        button {
+            border-radius: 3px;
+            background-color: #150d3b;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-size: 20px;
+            margin-top: 10px;
+            padding: 5px 30px;
+        }
+
+        a {
+            display: block;
+            margin-top: 40px;
+            font-size: 17px;
+            text-decoration: none;
+            color: rgb(146, 153, 161);
+        }
+    }
+}

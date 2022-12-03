@@ -1,0 +1,210 @@
+.main-search {
+    min-height: 100vh;
+    background: linear-gradient(to left, #050019, #09012d);
+
+    .container {
+        width: 80%;
+        padding: 70px 0;
+        margin: 0 auto;
+        position: relative;
+
+        .filters-wrap {
+            margin-bottom: 40px;
+
+            .filters {
+                display: grid;
+                grid-gap: 24px;
+                grid-template-columns: repeat(3, 220px);
+                justify-content: space-around;
+
+                @media only screen and (max-width:900px) {
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                }
+
+                @media only screen and (max-width:750px) {
+                    grid-template-columns: repeat(auto-fill, minmax(181px, 1fr));
+                }
+
+                .filter {
+                    p {
+                        color: white;
+                        font-size: 18px;
+                        padding: 10px 0;
+                        font-weight: 600;
+                    }
+
+                    .search-wrap {
+                        height: 100%;
+                        position: relative;
+
+                        .format {
+                            height: 40%;
+                            background: white;
+                            border-radius: 6px;
+                            padding-left: 13px;
+                            width: 100%;
+                            cursor: pointer;
+                        }
+
+                        .select {
+                            outline: 0;
+                            border-radius: 6px;
+                            border: none;
+                            padding-left: 13px;
+                            width: 100%;
+                            padding: 5px 16px;
+
+                            &::-webkit-search-cancel-button {
+                                display: none;
+                            }
+                        }
+
+                        .searcicons {
+                            top: 4px;
+                            left: 10px;
+                            font-size: 20px;
+                        }
+
+                        .closeicons {
+                            top: 5px;
+                            right: 10px;
+                            cursor: pointer;
+                            font-size: 17px;
+                        }
+
+                        .search {
+                            padding-left: 35px;
+                        }
+
+                        svg {
+                            top: 3px;
+                            right: 10px;
+                            font-size: 23px;
+                            cursor: pointer;
+                            position: absolute;
+                            transition: color 0.6s ease;
+
+                            &:hover {
+                                color: rgb(201, 215, 227);
+
+                            }
+                        }
+
+                        .options {
+                            width: 100%;
+                            overflow: auto;
+                            max-height: 100px;
+                            border-radius: 6px;
+                            z-index: 55;
+                            margin-top: 10px;
+                            position: absolute;
+                            padding: 10px;
+                            background-color: white;
+
+                            ul {
+                                li {
+                                    cursor: pointer;
+                                    font-weight: 600;
+                                    padding: 10px 12px;
+                                    list-style: none;
+                                    border-radius: 6px;
+                                    transition: color 0.3s ease, background-color 0.3s ease;
+
+                                    &:hover {
+                                        color: white;
+                                        background-color: #050019;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .filter-options {
+            width: 100%;
+            height: 100%;
+            color: red;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 20px;
+
+            svg {
+                font-size: 20px;
+                color: white;
+            }
+
+            span {
+                border-radius: 6px;
+                color: white;
+                background-color: rgb(61, 180, 242);
+                cursor: pointer;
+                display: inline-block;
+                font-weight: 600;
+                line-height: 13px;
+                margin-right: 12px;
+                padding: 5px 8px;
+                text-transform: capitalize;
+            }
+
+            &:hover {
+                .clear {
+                    opacity: 1;
+                }
+            }
+
+            .clear {
+                opacity: 0;
+                background-color: rgb(173, 192, 210);
+            }
+        }
+
+        .search-wrapper {
+            gap: 10px;
+            display: grid;
+            font-size: 17px;
+            user-select: none;
+            grid-template-columns: repeat(auto-fill, 185px);
+            justify-content: space-between;
+
+            @media only screen and (max-width:900px) {
+                grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+                grid-gap: 25px 20px;
+            }
+
+            .popular-movie {
+                color: white;
+                cursor: pointer;
+                text-decoration: none;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .search-reg {
+            position: absolute;
+            right: 0;
+
+            svg {
+                font-size: 35px;
+                cursor: pointer;
+                color: #4f2dd7;
+                transition: color 0.5s ease;
+
+                &:hover {
+                    color: white;
+                }
+
+                &:nth-child(1) {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+}
