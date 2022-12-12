@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Home from './components/Home/Home';
-import Tv from './components/Tv/Tv';
 import Search from './components/Search/Search';
 import Details from './components/details/Details';
 import Login from './components/login/Login';
@@ -18,7 +17,6 @@ function App() {
       <MainLayout />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/tv' element={<Tv />} />
         <Route path='/search' element={<Search />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
