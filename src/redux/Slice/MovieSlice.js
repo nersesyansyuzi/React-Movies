@@ -100,7 +100,7 @@ const movieSlice = createSlice({
         setFavorite: (state, { payload }) => {
             state.favorite = payload
         },
-        setClearAll: (state, { payload }) => {
+        setClearAll: (state) => {
             state.year = ""
             state.search = ""
         },
@@ -109,7 +109,7 @@ const movieSlice = createSlice({
         },
     },
     extraReducers: {
-        [fetchPopularMovies.pending]: (state, { payload }) => {
+        [fetchPopularMovies.pending]: (state) => {
             state.status="LOADING"
         },
         [fetchPopularMovies.fulfilled]: (state, { payload }) => {

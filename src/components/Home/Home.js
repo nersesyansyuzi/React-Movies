@@ -2,7 +2,9 @@ import { useSelector, useDispatch } from "react-redux";
 import MoviePopular from './MoviePopular';
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { fetchPopularTvMovies } from "../../redux/Slice/MovieSlice";
+import { fetchPopularTvMovies, setUserName } from "../../redux/Slice/MovieSlice";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase/Firebase";
 import "./home.style.scss"
 
 const imgs = "https://image.tmdb.org/t/p/original/"
@@ -13,6 +15,7 @@ function Home() {
     const { movie, popularTvMovies } = useSelector((state) => state.movie)
     const dispatch = useDispatch()
     const detailsNavigate = useNavigate()
+ 
 
     function sliceTitle(str, num) {
         if (num < str?.length) return str.slice(0, num) + "..."
@@ -22,6 +25,11 @@ function Home() {
 
     useEffect(() => {
         dispatch(fetchPopularTvMovies())
+        const user=onAuthStateChanged(auth,(user)=>{
+            if(user){
+                dispatch(setUserName(user.email))
+            }
+          })
     }, [])
 
 
